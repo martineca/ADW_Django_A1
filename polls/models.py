@@ -16,3 +16,10 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     def __str__(self):
         return self.choice_text
+
+
+class Note(models.Model):
+    note_text = models.CharField(max_length=4000)
+    note_title = models.CharField(max_length=200)
+    def __str__(self):
+        return self.note_text

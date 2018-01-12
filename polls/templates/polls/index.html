@@ -1,12 +1,18 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
-{% if latest_question_list %}
+{% if request.user.is_authenticated %}
+
+{% if latest_notes %}
     <ul>
-    {% for question in latest_question_list %}
-       <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% for note in latest_notes %}
+       <li><a href="{% url 'polls:detail' note.id %}">{{ note.note_title }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No polls are available.</p>
+{% endif %}
+{% else %}
+<p>not logged in </p>
+
 {% endif %}
