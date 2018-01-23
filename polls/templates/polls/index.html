@@ -3,16 +3,31 @@
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 {% if request.user.is_authenticated %}
 
-{% if latest_notes %}
-    <ul>
-    {% for note in latest_notes %}
-       <li><a href="{% url 'polls:detail' note.id %}">{{ note.note_title }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
-{% else %}
-<p>not logged in </p>
 
-{% endif %}
+
+<div id="notesWrapper">
+    <div id="notesContent">
+        {% if latest_notes %}
+
+        {% for note in latest_notes %}
+           <li>
+               <p>{{ note.note_title }}</p>
+               <p>{{ note.note_text }}</p>
+
+               <a href="{% url 'polls:detail' note.id %}">open</a>
+           </li>
+
+        {% endfor %}
+
+        {% else %}
+            <p>No notes are available.</p>
+        {% endif %}
+        {% else %}
+        <p>Not logged in </p>
+
+        {% endif %}
+
+
+    </div>
+</div>
+
