@@ -1,5 +1,6 @@
 li a {
-    color: green;
+    color: #fff;
+    display:block;
 }
 body {
     background: #f5f8fa;

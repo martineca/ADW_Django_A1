@@ -17,7 +17,17 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ('question_text', 'pub_date')
     list_filter = ['pub_date']
 
+
+class NoteAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': ['note_title','note_text']}),
+
+    ]
+    search_fields = ('note_title', 'note_text')
+
 admin.site.register(Question, QuestionAdmin)
-admin.site.register(Note)
+admin.site.register(Note, NoteAdmin)
+
+
 
 

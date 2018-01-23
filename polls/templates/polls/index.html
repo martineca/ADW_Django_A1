@@ -14,11 +14,15 @@
                <p>{{ note.note_title }}</p>
                <p>{{ note.note_text }}</p>
 
-               <a href="{% url 'polls:detail' note.id %}">open</a>
+               <a href="/admin/polls/note/{{ note.id }}/change/"> edit </a>
+               <a href="/admin/polls/note/{{ note.id }}/delete/">delete</a>
            </li>
 
         {% endfor %}
 
+    </div>
+     <a href="/admin/polls/note/add/"> Create new </a>
+</div>
         {% else %}
             <p>No notes are available.</p>
         {% endif %}
@@ -28,6 +32,5 @@
         {% endif %}
 
 
-    </div>
-</div>
+
 
