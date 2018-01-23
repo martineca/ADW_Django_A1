@@ -1,3 +1,5 @@
+<!-- Index page that lists every live note created on the system -->
+
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
@@ -27,7 +29,7 @@
             <p>No notes are available.</p>
         {% endif %}
         {% else %}
-        <p>Not logged in </p>
+        <p>Please login first - </p> <a href="/admin/"> Click</a>
 
         {% endif %}
 

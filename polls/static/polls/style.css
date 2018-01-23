@@ -7,29 +7,28 @@ body {
 }
 
 #notesWrapper {
-            width: 300px;
-            text-align:center;
-            margin:0 auto;
-            }
-            #notesContent {
-             border-radius: 20px;
-            padding: 30px 0px;
-            margin: 15px auto;
-            background: #00BCFF;
-            color: #fff;
-
-            }
-            #notesWrapper li {
-              list-style: none;
-            }
-            .nav {
-                background: #fff;
-             }
-             .content {
-             margin-left: 15px;
-             }
+     width: 300px;
+     text-align:center;
+     margin:0 auto;
+ }
+ #notesContent {
+     border-radius: 20px;
+     padding: 30px 0px;
+     margin: 15px auto;
+     background: #00BCFF;
+     color: #fff;
+ }
+ #notesWrapper li {
+    list-style: none;
+ }
+ .nav {
+     background: #fff;
+ }
+ .content {
+    margin-left: 15px;
+ }
 
 ul li {
-text-decoration:none;
-color:#fff;
+    text-decoration:none;
+    color:#fff;
 }

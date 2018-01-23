@@ -16,6 +16,7 @@ Including another URLconf
 from django.urls import include, path
 from django.contrib import admin
 
+#route configuration for main page(notes) and admin page
 urlpatterns = [
     path('', include('polls.urls')),
     path('admin/', admin.site.urls),
