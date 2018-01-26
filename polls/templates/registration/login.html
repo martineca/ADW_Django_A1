@@ -1,7 +1,9 @@
+<!-- Loads template design -->
+{% extends 'base.html' %}
 
-{% block title %}Login{% endblock %}
+<!-- insert this content into the base template -->
+ {% block content %}
 
-{% block content %}
   <h2>Login</h2>
   <form method="post">
     {% csrf_token %}

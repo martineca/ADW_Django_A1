@@ -4,7 +4,7 @@
 <!-- insert this content into the base template -->
  {% block content %}
 <form method="post">{% csrf_token %}
-    Are you sure you want to delete "{{ object }}" ?
+    Are you sure you want to delete the note with content: "{{ object }}" ?
     <input type="submit" value="Submit" />
 </form>
  {% endblock %}

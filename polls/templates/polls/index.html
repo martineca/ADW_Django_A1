@@ -3,18 +3,17 @@
 
 <!-- insert this content into the base template -->
  {% block content %}
+ {% if request.user.is_authenticated   %}
+ <div id="notesWrapper">
     <div id="notesContent">
         {% if latest_notes %}
-
         {% for note in latest_notes %}
            <li>
-               <p> ---------- </p>
                <p>Title: {{ note.note_title }}</p>
                <p>Text: {{ note.note_text }}</p>
                <a href="{% url 'note_edit' note.id %}">edit</a>
                <a href="{% url 'note_delete' note.id %}">delete</a>
-             <!--  <a href="/admin/polls/note/{{ note.id }}/change/"> edit </a> -->
-            <!--   <a href="/admin/polls/note/{{ note.id }}/delete/">delete</a> -->
+               <p> ---------- </p>
            </li>
 
         {% endfor %}
@@ -26,6 +25,10 @@
             <p>No notes are available.</p>
             <a href="/new"> Create new </a>
         {% endif %}
+
+ {% else %}
+    <p> Please login first.<a href="/login"> Login</a></p>
+ {% endif %}
  {% endblock %}
 
 

@@ -1,16 +1,17 @@
-li a {
-    color: #fff;
-    display:block;
-}
-body {
+ body {
     background: #f5f8fa;
     margin: 0px;
-}
-
-#Wrapper {
+ }
+ #Wrapper {
+     padding-left:40px;
+     margin-top:10px;
+ }
+ #notesWrapper
+ {
      width: 300px;
      text-align:center;
      margin:0 auto;
+     margin-top:120px;
  }
  #notesContent {
      border-radius: 20px;
@@ -29,10 +30,7 @@ body {
     margin-left: 15px;
  }
 
-ul li {
-    text-decoration:none;
-    color:#fff;
-}
+
 #header {
     width: auto;
     height: 40px;
@@ -41,7 +39,6 @@ ul li {
     line-height: 40px;
     color: #ffc;
     overflow: hidden;
-    margin-bottom:120px;
     }
 #branding h1 {
     padding: 0;

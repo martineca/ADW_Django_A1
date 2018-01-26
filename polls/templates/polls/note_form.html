@@ -3,8 +3,12 @@
 
 <!-- insert this content into the base template -->
  {% block content %}
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
+{% if request.user.is_authenticated   %}
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
+ {% else %}
+    <p> Please login first.<a href="/login"> Login</a></p>
+     {% endif %}
  {% endblock %}
