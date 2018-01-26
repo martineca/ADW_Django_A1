@@ -4,6 +4,7 @@ li a {
 }
 body {
     background: #f5f8fa;
+    margin: 0px;
 }
 
 #notesWrapper {
@@ -31,4 +32,46 @@ body {
 ul li {
     text-decoration:none;
     color:#fff;
+}
+#header {
+    width: auto;
+    height: 40px;
+    padding: 10px 40px;
+    background: #417690;
+    line-height: 40px;
+    color: #ffc;
+    overflow: hidden;
+    margin-bottom:120px;
+    }
+#branding h1 {
+    padding: 0;
+    margin: 0 20px 0 0;
+    font-weight: 300;
+    font-size: 24px;
+    color: #f5dd5d;
+}
+
+#user-tools {
+    float: right;
+    padding: 0;
+    margin: 0 0 0 20px;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: right;
+}
+#branding {
+    float: left;
+}
+#branding h1, #branding h1 a:link, #branding h1 a:visited {
+    color: #f5dd5d;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+#header a:link, #header a:visited {
+    color: #fff;
 }

@@ -3,10 +3,31 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
-{% if request.user.is_authenticated %}
+{% if request.user.is_authenticated   %}
+<!-- navigation and user panel -->
+<div id="header">
+        <div id="branding">
+
+<h1 id="site-name"><a href="/admin/">NotesOrganizer</a></h1>
+
+        </div>
+
+
+        <div id="user-tools">
+
+                Welcome,
+                <strong>{{ request.user.username.title }}</strong>.
+
+                <a href="/admin/password_change/">Change password</a> /
+                <a href="/admin/logout/">Log out</a>
+
+        </div>
 
 
 
+    </div>
+
+<!-- div that holds the notes -->
 <div id="notesWrapper">
     <div id="notesContent">
         {% if latest_notes %}
