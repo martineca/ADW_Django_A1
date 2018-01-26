@@ -7,7 +7,7 @@ body {
     margin: 0px;
 }
 
-#notesWrapper {
+#Wrapper {
      width: 300px;
      text-align:center;
      margin:0 auto;
@@ -19,7 +19,7 @@ body {
      background: #00BCFF;
      color: #fff;
  }
- #notesWrapper li {
+ #notesContent li {
     list-style: none;
  }
  .nav {

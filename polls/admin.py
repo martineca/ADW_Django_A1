@@ -17,7 +17,7 @@ class NoteAdmin(admin.ModelAdmin):
     #add search functionality
     search_fields = ('note_title', 'note_text')
 
-#register the customization
+#registration the customization
 admin.site.register(Note, NoteAdmin)
 
 

@@ -17,9 +17,7 @@
 
                 Welcome,
                 <strong>{{ request.user.username.title }}</strong>.
-
-                <a href="/admin/password_change/">Change password</a> /
-                <a href="/admin/logout/">Log out</a>
+                <a href="/logout/">Log out</a>
 
         </div>
 
@@ -28,17 +26,19 @@
     </div>
 
 <!-- div that holds the notes -->
-<div id="notesWrapper">
+<div id="Wrapper">
     <div id="notesContent">
         {% if latest_notes %}
 
         {% for note in latest_notes %}
            <li>
-               <p>{{ note.note_title }}</p>
-               <p>{{ note.note_text }}</p>
-
-               <a href="/admin/polls/note/{{ note.id }}/change/"> edit </a>
-               <a href="/admin/polls/note/{{ note.id }}/delete/">delete</a>
+               <p> ---------- </p>
+               <p>Title: {{ note.note_title }}</p>
+               <p>Text: {{ note.note_text }}</p>
+               <a href="{% url 'note_edit' note.id %}">edit</a>
+               <a href="{% url 'note_delete' note.id %}">delete</a>
+             <!--  <a href="/admin/polls/note/{{ note.id }}/change/"> edit </a> -->
+            <!--   <a href="/admin/polls/note/{{ note.id }}/delete/">delete</a> -->
            </li>
 
         {% endfor %}
@@ -48,9 +48,21 @@
 </div>
         {% else %}
             <p>No notes are available.</p>
+            <a href="/admin/polls/note/add/"> Create new </a>
         {% endif %}
+
         {% else %}
-        <p>Please login first - </p> <a href="/admin/"> Click</a>
+<!-- not logged in -->
+    <div id="header">
+        <div id="branding">
+           <h1 id="site-name"><a href="/admin/">NotesOrganizer</a></h1>
+        </div>
+    </div>
+    <div id="Wrapper">
+         <p>You have to login first! - </p> <a href="/login/"> Login</a>
+    </div>
+
+
 
         {% endif %}
 
