@@ -1,32 +1,8 @@
-<!-- Index page that lists every live note created on the system -->
+<!-- Loads template design -->
+{% extends 'base.html' %}
 
-{% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
-{% if request.user.is_authenticated   %}
-<!-- navigation and user panel -->
-<div id="header">
-        <div id="branding">
-
-<h1 id="site-name"><a href="/admin/">NotesOrganizer</a></h1>
-
-        </div>
-
-
-        <div id="user-tools">
-
-                Welcome,
-                <strong>{{ request.user.username.title }}</strong>.
-                <a href="/logout/">Log out</a>
-
-        </div>
-
-
-
-    </div>
-
-<!-- div that holds the notes -->
-<div id="Wrapper">
+<!-- insert this content into the base template -->
+ {% block content %}
     <div id="notesContent">
         {% if latest_notes %}
 
@@ -44,27 +20,14 @@
         {% endfor %}
 
     </div>
-     <a href="/admin/polls/note/add/"> Create new </a>
+     <a href="/new"> Create new </a>
 </div>
         {% else %}
             <p>No notes are available.</p>
-            <a href="/admin/polls/note/add/"> Create new </a>
+            <a href="/new"> Create new </a>
         {% endif %}
+ {% endblock %}
 
-        {% else %}
-<!-- not logged in -->
-    <div id="header">
-        <div id="branding">
-           <h1 id="site-name"><a href="/admin/">NotesOrganizer</a></h1>
-        </div>
-    </div>
-    <div id="Wrapper">
-         <p>You have to login first! - </p> <a href="/login/"> Login</a>
-    </div>
-
-
-
-        {% endif %}
 
 
 

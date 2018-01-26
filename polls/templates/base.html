@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+</head>
+<body>
+{% if request.user.is_authenticated   %}
+<!-- navigation and user panel -->
+<div id="header">
+        <div id="branding">
+
+<h1 id="site-name"><a href="/">NotesOrganizer</a></h1>
+
+        </div>
+
+
+        <div id="user-tools">
+
+                Welcome,
+                <strong>{{ request.user.username.title }}</strong>.
+                <a href="/logout/">Log out</a>
+
+        </div>
+
+
+
+    </div>
+
+  {% else %}
+<!-- not logged in -->
+    <div id="header">
+        <div id="branding">
+           <h1 id="site-name"><a href="/admin/">NotesOrganizer</a></h1>
+        </div>
+    </div>
+
+ {% endif %}
+
+<!-- div that holds the notes -->
+<div id="Wrapper">
+            {% block content %}
+            {% endblock %}
+            </div>
+
+</body>
+</html>

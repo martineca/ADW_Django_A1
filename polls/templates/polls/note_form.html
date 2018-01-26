@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!-- Loads template design -->
+{% extends 'base.html' %}
+
+<!-- insert this content into the base template -->
+ {% block content %}
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit" />
 </form>
-
-</body>
-</html>
+ {% endblock %}
